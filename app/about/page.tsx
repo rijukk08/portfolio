@@ -2,18 +2,27 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
+import { type StaticImageData } from 'next/image'
 import photo1 from '@/images/about/1.jpg'
 import photo2 from '@/images/about/2.jpg'
+import photo4 from '@/images/about/4.jpg'
+import photo5 from '@/images/about/5.jpg'
+import photo6 from '@/images/about/6.jpg'
+import photo7 from '@/images/about/7.jpg'
+import logoIbm        from '@/images/about/companies/ibm.jpg'
+import logoUnacademy  from '@/images/about/companies/unacademy.png'
+import logoFincent    from '@/images/about/companies/fincent.png'
+import logoIxigo      from '@/images/about/companies/ixigo.png'
 
-const PHOTOS = [photo1, photo2, photo1, photo2, photo1, photo2]
+const PHOTOS = [photo1, photo2, photo4, photo5, photo6, photo7]
 
-const ROLES = [
-  { company: 'IBM',           role: 'Design',                  dates: 'Jan 2025–Present' },
-  { company: 'Unacademy',     role: 'Lead Designer',           dates: 'Feb 2024–Aug 2024' },
-  { company: 'Fincent',       role: 'Lead Product Designer',   dates: 'Jan 2022–Feb 2024' },
-  { company: 'ixigo',         role: 'Lead UX Designer',        dates: 'Jun 2020–Jan 2022' },
-  { company: 'ixigo',         role: 'Principal UX Designer',   dates: 'Aug 2018–Jun 2020' },
-  { company: 'Design For Use', role: 'Sr. Product Designer',   dates: 'May 2015–Jul 2018' },
+const ROLES: { company: string; role: string; dates: string; logo: StaticImageData | null }[] = [
+  { company: 'IBM',            role: 'Design',                  dates: 'Jan 2025–Present',  logo: logoIbm },
+  { company: 'Unacademy',      role: 'Lead Designer',           dates: 'Feb 2024–Aug 2024', logo: logoUnacademy },
+  { company: 'Fincent',        role: 'Lead Product Designer',   dates: 'Jan 2022–Feb 2024', logo: logoFincent },
+  { company: 'ixigo',          role: 'Lead UX Designer',        dates: 'Jun 2020–Jan 2022', logo: logoIxigo },
+  { company: 'ixigo',          role: 'Principal UX Designer',   dates: 'Aug 2018–Jun 2020', logo: logoIxigo },
+  { company: 'Design For Use', role: 'Sr. Product Designer',    dates: 'May 2015–Jul 2018', logo: null },
 ]
 
 const BIO = [
@@ -56,15 +65,12 @@ export default function About() {
         <div className="overflow-hidden mb-16">
           <div className="flex gap-4 animate-marquee w-max">
             {[...PHOTOS, ...PHOTOS].map((src, i) => (
-              <div
-                key={i}
-                className="relative shrink-0 w-64 h-80 rounded-2xl overflow-hidden bg-[#1a1a1a]"
-              >
+              <div key={i} className="relative shrink-0 w-64 h-80 rounded-2xl overflow-hidden bg-[#1a1a1a]">
                 <Image
                   src={src}
                   alt={`Photo ${(i % PHOTOS.length) + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="256px"
                 />
               </div>
@@ -92,17 +98,22 @@ export default function About() {
             10+ years building products.
           </h2>
           <div className="flex flex-col divide-y divide-[#1f1f1f]">
-            {ROLES.map(({ company, role, dates }, i) => (
+            {ROLES.map(({ company, role, dates, logo }, i) => (
               <div key={i} className="flex items-center gap-5 py-5">
-                {/* Logo placeholder */}
-                <div className="shrink-0 w-10 h-10 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`/images/about/companies/${company.toLowerCase().replace(/\s+/g, '-')}.png`}
-                    alt={company}
-                    className="w-full h-full object-contain p-1.5"
-                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
-                  />
+                <div className="relative shrink-0 w-10 h-10 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] overflow-hidden">
+                  {logo ? (
+                    <Image
+                      src={logo}
+                      alt={company}
+                      fill
+                      className="object-contain p-1.5"
+                      sizes="40px"
+                    />
+                  ) : (
+                    <span className="w-full h-full flex items-center justify-center text-[0.5rem] text-[#555] font-bold uppercase tracking-wider">
+                      DFU
+                    </span>
+                  )}
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-semibold text-white">{company}</p>
