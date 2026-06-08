@@ -27,9 +27,9 @@ export default function Nav() {
           Riju Balakrishnan
         </Link>
         <div className="flex items-center gap-6">
-          <a href="#work" className="text-sm text-neutral-400 hover:text-neutral-100 transition-colors">
+          <Link href="/#work" className="text-sm text-neutral-400 hover:text-neutral-100 transition-colors">
             Work
-          </a>
+          </Link>
           <a href="#about" className="text-sm text-neutral-400 hover:text-neutral-100 transition-colors">
             About
           </a>
