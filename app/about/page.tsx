@@ -1,8 +1,11 @@
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
+import photo1 from '@/images/about/1.jpg'
+import photo2 from '@/images/about/2.jpg'
 
-const PHOTOS = [1, 2, 3, 4, 5]
+const PHOTOS = [photo1, photo2, photo1, photo2, photo1, photo2]
 
 const ROLES = [
   { company: 'IBM',           role: 'Design',                  dates: 'Jan 2025–Present' },
@@ -52,17 +55,17 @@ export default function About() {
         {/* Scrolling photo strip */}
         <div className="overflow-hidden mb-16">
           <div className="flex gap-4 animate-marquee w-max">
-            {[...PHOTOS, ...PHOTOS].map((n, i) => (
+            {[...PHOTOS, ...PHOTOS].map((src, i) => (
               <div
                 key={i}
                 className="relative shrink-0 w-64 h-80 rounded-2xl overflow-hidden bg-[#1a1a1a]"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`/images/about/${n}.jpg`}
-                  alt={`Photo ${n}`}
-                  className="w-full h-full object-cover"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                <Image
+                  src={src}
+                  alt={`Photo ${(i % PHOTOS.length) + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="256px"
                 />
               </div>
             ))}
