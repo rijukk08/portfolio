@@ -5,14 +5,14 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 
 import hero1       from '@/images/projects/ixigo/hero1.png'
-import procees     from '@/images/projects/ixigo/procees.png'
-import cardsorting from '@/images/projects/ixigo/cardsorting.png'
-import graph       from '@/images/projects/ixigo/graph.png'
-import usercall    from '@/images/projects/ixigo/usercall.png'
-import progress    from '@/images/projects/ixigo/progress.png'
-import beforeafter from '@/images/projects/ixigo/beforeafter.png'
-import screen2     from '@/images/projects/ixigo/2.png'
-import screen1     from '@/images/projects/ixigo/1.png'
+import procees     from '@/images/projects/ixigo/procees.webp'
+import cardsorting from '@/images/projects/ixigo/cardsorting.webp'
+import graph       from '@/images/projects/ixigo/graph.webp'
+import usercall    from '@/images/projects/ixigo/usercall.webp'
+import progress    from '@/images/projects/ixigo/progress.webp'
+import beforeafter from '@/images/projects/ixigo/beforeafter.webp'
+import screen2     from '@/images/projects/ixigo/2.webp'
+import screen1     from '@/images/projects/ixigo/1.webp'
 
 const SECTIONS = [
   { id: 'overview',    label: 'Overview' },
