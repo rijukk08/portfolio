@@ -81,13 +81,12 @@ function ProjectCard({
 
       {/* Image — exactly 816×416, cropped center top */}
       {thumb && (
-        <div className="relative w-full h-[416px] overflow-hidden rounded-t-2xl">
+        <div className="relative w-full h-[460px] overflow-hidden rounded-t-2xl">
           <Image
             src={thumb}
             alt={project.title}
             fill
-            className="object-cover"
-            style={{ objectPosition: 'center top' }}
+            className="object-cover object-center"
             sizes="816px"
           />
         </div>
