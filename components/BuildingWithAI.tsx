@@ -2,25 +2,25 @@ export default function BuildingWithAI() {
   return (
     <section className="py-24 px-6 max-w-4xl mx-auto">
 
-      {/* Top */}
       <p className="text-[0.65rem] uppercase tracking-[0.22em] font-semibold text-[#e85d26] mb-4">
         Building with AI
       </p>
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white leading-[1.1] mb-3">
-        Shipping real things to learn new skills.
+      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white leading-[1.1] mb-5">
+        Learning by shipping.
       </h2>
-      <p className="text-[#888888] text-sm mb-8">
-        Not tutorials. Not side projects that never launch. Real things.
+      <p className="text-[#888888] text-base leading-relaxed max-w-xl mb-12">
+        I've always learned best by doing. So instead of tutorials, I build real things — tools I
+        actually use, experiments that teach me something, and projects that push me to figure things
+        out as I go. This portfolio is one of them.
       </p>
 
       {/* Tool icons */}
-      <div className="flex items-center gap-6 mb-16 opacity-50">
+      <div className="flex items-center gap-6 mb-12 opacity-50">
         {TOOLS.map(({ label, icon }) => (
           <div key={label} className="relative group flex flex-col items-center">
             <div className="w-8 h-8 text-[#888888] hover:text-white hover:opacity-100 transition-colors cursor-default">
               {icon}
             </div>
-            {/* Tooltip */}
             <div className="pointer-events-none absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#1f1f1f] border border-[#2a2a2a] px-2 py-1 text-[0.65rem] text-[#888888] opacity-0 group-hover:opacity-100 transition-opacity duration-150">
               {label}
             </div>
@@ -28,40 +28,20 @@ export default function BuildingWithAI() {
         ))}
       </div>
 
-      {/* Featured card */}
-      <div className="rounded-2xl bg-[#111111] border border-[#2a2a2a] border-t-[#e85d26] overflow-hidden"
-           style={{ borderTopWidth: '2px', borderTopColor: '#e85d26' }}>
-        <div className="p-8 md:p-10 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
-
-          {/* Left — monogram + title */}
-          <div className="flex flex-col gap-4">
-            <div className="w-14 h-14 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center shrink-0">
-              <span className="text-white font-bold text-lg tracking-tight">RK</span>
-            </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight whitespace-nowrap">
-              This Portfolio
-            </h3>
-          </div>
-
-          {/* Right — description + tags */}
-          <div className="flex flex-col gap-6 pt-1">
-            <p className="text-[#888888] text-base leading-relaxed">
-              Designed and built entirely with Claude Code. Every layout decision, every interaction, every detail written from scratch. No templates. You are looking at it.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {['Claude Code', 'Claude API', 'Next.js', 'Framer Motion', 'Tailwind'].map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs px-3 py-1.5 rounded-full bg-[#1f1f1f] text-[#888888] border border-[#2a2a2a]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-        </div>
+      <p className="text-[#555555] text-sm leading-relaxed mb-4">
+        Designed and built entirely with Claude Code. No templates — every layout decision is intentional.
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {['Claude Code', 'Claude API', 'Next.js', 'Framer Motion', 'Tailwind'].map((tag) => (
+          <span
+            key={tag}
+            className="text-xs px-3 py-1.5 rounded-full bg-[#1a1a1a] text-[#555555]"
+          >
+            {tag}
+          </span>
+        ))}
       </div>
+
     </section>
   )
 }
