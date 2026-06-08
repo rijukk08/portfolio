@@ -30,9 +30,9 @@ export default function Nav() {
           <Link href="/#work" className="text-sm text-neutral-400 hover:text-neutral-100 transition-colors">
             Work
           </Link>
-          <a href="#about" className="text-sm text-neutral-400 hover:text-neutral-100 transition-colors">
+          <Link href="/about" className="text-sm text-neutral-400 hover:text-neutral-100 transition-colors">
             About
-          </a>
+          </Link>
           <a href="#contact" className="text-sm text-neutral-400 hover:text-neutral-100 transition-colors">
             Contact
           </a>
