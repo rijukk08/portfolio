@@ -12,7 +12,7 @@ import photo7 from '@/images/about/7.jpg'
 const PHOTOS = [photo1, photo2, photo4, photo5, photo6, photo7]
 
 const BIO = [
-  "I'm a product designer based in Bengaluru. Ten years in, across travel, fintech, and edtech — I've shipped for ixigo's trains app, built Fincent's product from desktop to iOS, and led design at Unacademy. Now at IBM, working on enterprise software at a scale I'm still wrapping my head around.",
+  "A decade in, and I've had the chance to work on products that a lot of people use daily — trains on ixigo, finances on Fincent, learning on Unacademy. Now figuring out enterprise at IBM.",
   "I care about making complex things feel simple. Not as a philosophy — just as the actual job.",
   "Outside work: trekking, cricket, badminton, biking, and spending too much time trying out whatever AI tool just dropped.",
 ]
@@ -57,7 +57,7 @@ export default function About() {
       <main className="bg-[#0a0a0a] min-h-screen pt-24 pb-32">
 
         {/* Back link */}
-        <div className="max-w-4xl mx-auto px-6 mb-12">
+        <div className="max-w-5xl mx-auto px-6 mb-12">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-sm text-[#666666] hover:text-white transition-colors"
@@ -70,7 +70,7 @@ export default function About() {
         </div>
 
         {/* Hero */}
-        <div className="max-w-4xl mx-auto px-6 mb-12">
+        <div className="max-w-5xl mx-auto px-6 mb-12">
           <p className="text-[0.65rem] uppercase tracking-[0.22em] font-semibold text-[#e85d26] mb-4">
             About
           </p>
@@ -97,10 +97,10 @@ export default function About() {
         </div>
 
         {/* Bio */}
-        <div className="max-w-4xl mx-auto px-6 mb-24">
-          <div className="max-w-2xl space-y-6">
+        <div className="max-w-5xl mx-auto px-6 mb-24">
+          <div className="max-w-3xl space-y-6">
             {BIO.map((para, i) => (
-              <p key={i} className="text-base text-[#888888] leading-relaxed">
+              <p key={i} style={{ fontSize: '18px', lineHeight: '1.8', color: '#e0e0e0' }}>
                 {para}
               </p>
             ))}
@@ -108,7 +108,7 @@ export default function About() {
         </div>
 
         {/* Experience */}
-        <div className="max-w-4xl mx-auto px-6 mb-24">
+        <div className="max-w-5xl mx-auto px-6 mb-24">
           <p className="text-[0.65rem] uppercase tracking-[0.22em] font-semibold text-[#e85d26] mb-4">
             Experience
           </p>
@@ -119,11 +119,11 @@ export default function About() {
             {ROLES.map(({ company, dates, role, description }, i) => (
               <div key={i} className="border-t border-[#1f1f1f] py-8">
                 <div className="flex items-baseline justify-between gap-4 mb-1">
-                  <span className="text-base font-semibold text-white">{company}</span>
-                  <span className="shrink-0 text-sm text-[#444444] tabular-nums">{dates}</span>
+                  <span style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff' }}>{company}</span>
+                  <span className="shrink-0 tabular-nums" style={{ fontSize: '14px', color: '#666666' }}>{dates}</span>
                 </div>
-                <p className="text-sm text-[#555555] mb-4">{role}</p>
-                <p className="text-sm text-[#777777] leading-relaxed max-w-2xl">{description}</p>
+                <p className="mb-4" style={{ fontSize: '15px', color: '#888888' }}>{role}</p>
+                <p className="max-w-3xl" style={{ fontSize: '17px', lineHeight: '1.75', color: '#c8c8c8' }}>{description}</p>
               </div>
             ))}
             <div className="border-t border-[#1f1f1f]" />
@@ -131,7 +131,7 @@ export default function About() {
         </div>
 
         {/* Contact */}
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="border-t border-[#2a2a2a] pt-16">
             <p className="text-[0.65rem] uppercase tracking-[0.22em] font-semibold text-[#e85d26] mb-4">
               Contact
