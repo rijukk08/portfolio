@@ -14,18 +14,6 @@ export interface Project {
 
 export const STATIC_PROJECTS: Project[] = [
   {
-    _id: '1',
-    slug: 'ixigo',
-    title: 'Redesigning search to reduce drop-off for 10M+ users',
-    subtitle: 'Search Results Page',
-    company: 'IXIGO',
-    category: 'UX Design',
-    description:
-      "Redesigning the search results page for one of India's largest travel platforms to improve conversion rates and overall user experience.",
-    tags: ['UX Research', 'UI Design', 'Mobile'],
-    imageFile: 'ixigo.png',
-  },
-  {
     _id: '4',
     slug: 'airlearn',
     title: 'Driving engagement with Monthly Recap on Unacademy',
@@ -48,6 +36,18 @@ export const STATIC_PROJECTS: Project[] = [
       'Complete redesign of the financial heads-up dashboard, bringing clarity and focus to a complex accounting platform.',
     tags: ['Product Design', 'Web App', 'Fintech'],
     imageFile: 'fincent_desktop.png',
+  },
+  {
+    _id: '1',
+    slug: 'ixigo',
+    title: 'Redesigning search to reduce drop-off for 10M+ users',
+    subtitle: 'Search Results Page',
+    company: 'IXIGO',
+    category: 'UX Design',
+    description:
+      "Redesigning the search results page for one of India's largest travel platforms to improve conversion rates and overall user experience.",
+    tags: ['UX Research', 'UI Design', 'Mobile'],
+    imageFile: 'ixigo.png',
   },
   {
     _id: '3',
