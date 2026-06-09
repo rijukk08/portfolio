@@ -9,9 +9,7 @@ export default function BuildingWithAI() {
         Learning by shipping.
       </h2>
       <p className="text-[#888888] text-base leading-relaxed max-w-xl mb-12">
-        I've always learned best by doing. So instead of tutorials, I build real things — tools I
-        actually use, experiments that teach me something, and projects that push me to figure things
-        out as I go. This portfolio is one of them.
+        The best way I know to learn something is to ship something. So that's what I do.
       </p>
 
       {/* Tool icons */}
