@@ -71,7 +71,7 @@ function ProjectCard({
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[0.65rem] px-2.5 py-1 rounded-full bg-[#1f1f1f] text-[#888888] tracking-wide"
+              className="text-[0.65rem] px-2.5 py-1 rounded-full text-white tracking-wide" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }}
             >
               {tag}
             </span>
@@ -81,7 +81,7 @@ function ProjectCard({
 
       {/* Image — exactly 816×416, cropped center top */}
       {thumb && (
-        <div className="relative w-full h-[460px] overflow-hidden rounded-t-2xl">
+        <div className="relative w-full h-[460px] overflow-hidden">
           <Image
             src={thumb}
             alt={project.title}
