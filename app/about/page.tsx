@@ -2,34 +2,52 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
-import { type StaticImageData } from 'next/image'
 import photo1 from '@/images/about/1.jpg'
 import photo2 from '@/images/about/2.jpg'
 import photo4 from '@/images/about/4.jpg'
 import photo5 from '@/images/about/5.jpg'
 import photo6 from '@/images/about/6.jpg'
 import photo7 from '@/images/about/7.jpg'
-import logoIbm        from '@/images/about/companies/ibm.jpg'
-import logoUnacademy  from '@/images/about/companies/unacademy.png'
-import logoFincent    from '@/images/about/companies/fincent.png'
-import logoIxigo      from '@/images/about/companies/ixigo.png'
 
 const PHOTOS = [photo1, photo2, photo4, photo5, photo6, photo7]
 
-const ROLES: { company: string; role: string; dates: string; logo: StaticImageData | null }[] = [
-  { company: 'IBM',            role: 'Design',                  dates: 'Jan 2025–Present',  logo: logoIbm },
-  { company: 'Unacademy',      role: 'Lead Designer',           dates: 'Feb 2024–Aug 2024', logo: logoUnacademy },
-  { company: 'Fincent',        role: 'Lead Product Designer',   dates: 'Jan 2022–Feb 2024', logo: logoFincent },
-  { company: 'ixigo',          role: 'Lead UX Designer',        dates: 'Jun 2020–Jan 2022', logo: logoIxigo },
-  { company: 'ixigo',          role: 'Principal UX Designer',   dates: 'Aug 2018–Jun 2020', logo: logoIxigo },
-  { company: 'Design For Use', role: 'Sr. Product Designer',    dates: 'May 2015–Jul 2018', logo: null },
+const BIO = [
+  "I'm a product designer based in Bengaluru. Ten years in, across travel, fintech, and edtech — I've shipped for ixigo's trains app, built Fincent's product from desktop to iOS, and led design at Unacademy. Now at IBM, working on enterprise software at a scale I'm still wrapping my head around.",
+  "I care about making complex things feel simple. Not as a philosophy — just as the actual job.",
+  "Outside work: trekking, cricket, badminton, biking, and spending too much time trying out whatever AI tool just dropped.",
 ]
 
-const BIO = [
-  'I grew up in Kerala and built my career across India\'s leading product companies. Over the past 10+ years I\'ve helped design products used by millions — at ixigo, Fincent, Unacademy, and now IBM — starting as a designer and growing into lead roles shaping strategy, design systems, and cross-functional teams.',
-  'At ixigo I led UX for one of India\'s largest travel apps, redesigning core flows used by tens of millions of users. At Fincent I directed the entire product design from desktop to iOS. At Unacademy I led design for candidate and recruiter platforms across web and mobile.',
-  'These days I\'m exploring AI-assisted design workflows — using tools like Claude Code, Figma AI, and MCP-based systems to move faster from idea to working product. This portfolio itself was built entirely with Claude Code.',
-  'When I\'m not designing, you\'ll find me trekking in the hills, on a cricket pitch, playing badminton, or riding my bike. I also spend a lot of time tinkering with the latest AI tools to see what\'s actually useful.',
+const ROLES = [
+  {
+    company: 'IBM',
+    dates: 'Jan 2025 – Present',
+    role: 'Design',
+    description: "Still early days here, but I'm working on enterprise product experiences at one of the world's most complex software companies. It's a different scale than anything I've worked on before — and that's exactly why I took it.",
+  },
+  {
+    company: 'Unacademy',
+    dates: 'Feb 2024 – Aug 2024',
+    role: 'Lead Designer',
+    description: "I led UX and visual design for candidate and recruiter platforms — both web and mobile. Worked closely with engineering and QA to ship pixel-perfect interfaces on tight timelines. Short stint, but shipped meaningful things.",
+  },
+  {
+    company: 'Fincent',
+    dates: 'Jan 2022 – Feb 2024',
+    role: 'Lead Product Designer',
+    description: "Led design end-to-end for a fintech startup building bookkeeping tools for small businesses. Owned the desktop product — transaction management, financial summaries, directory features — and also directed the entire iOS app design from scratch. Managed the design system too.",
+  },
+  {
+    company: 'ixigo',
+    dates: 'Aug 2018 – Jan 2022',
+    role: 'Lead UX Designer → Principal UX Designer',
+    description: "Three and a half years at one of India's largest travel apps. I led UX for the trains product — redesigned the search results page, trip details, and booking flow. Did the research, ran the user calls, made the calls on direction. Also interviewed and mentored junior designers along the way.",
+  },
+  {
+    company: 'Design For Use',
+    dates: 'May 2015 – Jul 2018',
+    role: 'Sr. Product Designer',
+    description: "Where I learned to do this properly. Worked across a range of clients — co-designed the IKEA KSA ecommerce UX with Frog Design, built the mobile app UX for IKEA KSA, led end-to-end design for Club Mahindra app, and redesigned Apollo Munich Insurance web platforms.",
+  },
 ]
 
 export default function About() {
@@ -80,7 +98,7 @@ export default function About() {
 
         {/* Bio */}
         <div className="max-w-4xl mx-auto px-6 mb-24">
-          <div className="max-w-2xl space-y-5">
+          <div className="max-w-2xl space-y-6">
             {BIO.map((para, i) => (
               <p key={i} className="text-base text-[#888888] leading-relaxed">
                 {para}
@@ -97,31 +115,18 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-12">
             10+ years building products.
           </h2>
-          <div className="flex flex-col divide-y divide-[#1f1f1f]">
-            {ROLES.map(({ company, role, dates, logo }, i) => (
-              <div key={i} className="flex items-center gap-5 py-5">
-                <div className="relative shrink-0 w-10 h-10 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] overflow-hidden">
-                  {logo ? (
-                    <Image
-                      src={logo}
-                      alt={company}
-                      fill
-                      className="object-contain p-1.5"
-                      sizes="40px"
-                    />
-                  ) : (
-                    <span className="w-full h-full flex items-center justify-center text-[0.5rem] text-[#555] font-bold uppercase tracking-wider">
-                      DFU
-                    </span>
-                  )}
+          <div className="flex flex-col">
+            {ROLES.map(({ company, dates, role, description }, i) => (
+              <div key={i} className="border-t border-[#1f1f1f] py-8">
+                <div className="flex items-baseline justify-between gap-4 mb-1">
+                  <span className="text-base font-semibold text-white">{company}</span>
+                  <span className="shrink-0 text-sm text-[#444444] tabular-nums">{dates}</span>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-white">{company}</p>
-                  <p className="text-sm text-[#666666]">{role}</p>
-                </div>
-                <p className="shrink-0 text-sm text-[#555555] tabular-nums">{dates}</p>
+                <p className="text-sm text-[#555555] mb-4">{role}</p>
+                <p className="text-sm text-[#777777] leading-relaxed max-w-2xl">{description}</p>
               </div>
             ))}
+            <div className="border-t border-[#1f1f1f]" />
           </div>
         </div>
 
