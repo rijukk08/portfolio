@@ -22,7 +22,7 @@ const ROLES = [
     company: 'IBM',
     dates: 'Jan 2025 – Present',
     role: 'Design',
-    description: "Still early days here, but I'm working on enterprise product experiences at one of the world's most complex software companies. It's a different scale than anything I've worked on before — and that's exactly why I took it.",
+    description: "Still early days here, but I'm working on enterprise product experiences at one of the world's most complex software companies. It's a different scale than anything I've worked on before.",
   },
   {
     company: 'Unacademy',
