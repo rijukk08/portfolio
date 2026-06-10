@@ -14,7 +14,7 @@ const PHOTOS = [photo1, photo2, photo4, photo5, photo6, photo7]
 const BIO = [
   "A decade in, and I've had the chance to work on products that a lot of people use daily — trains on ixigo, finances on Fincent, learning on Unacademy. Now figuring out enterprise at IBM.",
   "I care about making complex things feel simple. Not as a philosophy — just as the actual job.",
-  "Outside work: trekking, cricket, badminton, biking, and spending too much time trying out whatever AI tool just dropped.",
+  "Outside work: trekking, cricket, badminton, biking, iPhone photography, and keeping up with the latest tools in design.",
 ]
 
 const ROLES = [
