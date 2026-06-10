@@ -51,7 +51,7 @@ export default function Hero() {
           variants={item}
           className="text-[0.95rem] md:text-base text-[#888888] leading-relaxed"
         >
-          Product designer with 10+ years. Designing products used by millions across travel, fintech, and edtech. Led design at ixigo, Fincent, Unacademy, and IBM. Currently building with Claude Code.
+          Product designer with 10+ years. Designing products used by millions across travel, fintech, and edtech. Currently at IBM. Previously at Unacademy, Fincent, and ixigo. Building with Claude Code.
         </motion.p>
 
         <motion.p
